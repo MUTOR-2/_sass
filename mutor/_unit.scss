@@ -1,0 +1,191 @@
+body {
+    counter-reset: section;
+    counter-reset: subsection;
+    counter-reset: subsubsection;
+}
+
+.unit {
+    //padding-left: 5%;
+    padding: 0 10px 0 10px;
+    position: relative;
+
+    // by default, the toc is at the very start of the text
+    // in the main content block, but we want it in the side
+    // info panel, so we use js to clone the toc node there,
+    // where it is styled according to the info side column
+    // style, and hide this one.
+    .unit-toc {
+	display: none;
+    }
+
+    .unit-preamble {
+	max-width: $global-max-width / 1.5;
+	padding-right: 10px;
+	padding-left: 50px;
+	font-family: $global-font-family;
+	font-size: $global-font-size;
+	font-weight: $global-font-weight;
+	font-style: oblique;
+
+	em {
+	    font-style: normal;
+	}
+
+	position: relative;
+
+	// .page-content {
+	//     padding-left: 100px;
+	// }
+	h1, h2, h3, h4, h5, h6 {
+	    font-style: oblique;
+	}
+
+	.animation {
+	    text-align: center;
+	}
+    }
+
+    .unit-main {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	height: auto;
+	position: relative;
+	
+	// for debugging layout
+	//border: 1px solid $global-delim-color;
+    }
+
+    .unit-content {
+	display: table-cell;
+	min-width: 70%;
+	padding-right: 48px;
+
+	// this is all to put a number in front
+	// of each section, subsection, etc.
+	h1 {
+	    counter-reset: subsection;
+	    counter-increment: section;
+	}
+
+	h1:before {
+	    content: counter(section) ". ";
+	}
+
+	h2 {
+	    counter-reset: subsubsection;
+	    counter-increment: subsection;
+	    font-style: normal;
+	}
+	
+	h2:before {
+	    content: counter(section) "." counter(subsection) " ";
+	}
+
+	h3 {
+	    counter-reset: subsubsubsection;
+	    counter-increment: subsubsection;
+	    font-style: normal;
+	}
+
+	h3:before {
+	    content: counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+	}
+
+	h4 {
+	    /* counter-increment: subsubsubsection; */
+	    font-style: normal;
+	}
+
+	h4:before {
+	    /* content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(subsubsubsection) " "; */
+	}
+
+	/* figure.fig figcaption:before { */
+	/* 	counter-increment: figure; */
+	/* 	/\* content: "Figure " $unit-number "." counter(figure) ": "; *\/ */
+	/* } */
+
+	figure figcaption {
+	    text-align: center;
+	    font-weight: bold;
+	}
+
+	figure {
+	    display: inline-block;
+	    text-align: center;
+	}
+
+	dl {
+	}
+	dt {
+	    font-weight: bold;
+	}
+	dd {
+	    text-indent: 1em;
+	}
+    }
+
+    .unit-info-column {
+	display: table-cell;
+	width: 20%;
+	font-style: oblique;
+	
+	.unit-info-header {
+	    padding: 0;
+	    margin: 0 0 8px 0;
+	}
+
+	ul {
+	    padding: 0;
+	    margin: 0;
+	}
+	
+	li {
+	    list-style-type: none;
+	    margin-bottom: 8px;
+	    ul {
+		li {
+		    list-style-type: circle;
+		    margin-left: 16px;
+		    margin-bottom: 0;
+		}
+	    }
+	}
+    }
+
+    .unit-quiz {
+	h2 {
+	}
+
+	h3 {
+	}
+
+	h4 {
+	}
+    }
+
+    .unit-references {
+
+	h2 {
+	}
+
+	h3 {
+	}
+
+	h4 {
+	}
+
+	ol {
+	    counter-reset: list;
+	    padding: 0;
+	}
+	ol > li {
+	    list-style: none;
+	}
+	ol > li:before {
+	    content: "[" counter(list) "] ";
+	    counter-increment: list;
+	}
+    }
+}

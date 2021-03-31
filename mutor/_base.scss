@@ -1,0 +1,129 @@
+// global variables useable throughout the other scss
+// files, and some top-level style definitions
+
+$global-max-width: 1200px;
+$global-bg-color: #FFFFFF;
+$global-text-color: #000000;
+$global-delim-color: #000000;
+$global-font-family: Helvetica, Arial, sans-serif;
+$global-font-size: 16px;
+$global-font-weight: 400;
+
+$global-title-indent: 100px;
+
+//$global-footer-height: 150px;
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: $global-bg-color;
+    max-width: $global-max-width;
+    margin: auto;
+    // push the footer to the bottom
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: $global-text-color;
+    text-decoration: none;
+
+    &:visited {
+	//color: darken($brand-color, 15%);
+    }
+
+    &:hover {
+	//color: $text-color;
+	//text-decoration: underline;
+    }
+}
+
+h1 {
+    font-size: xx-large;
+}
+h2 {
+    font-size: x-large;
+}
+h3 {
+    //font-size: large;
+    font-size: x-large;
+}
+h4 {
+    //font-size: medium;
+    font-size: x-large;
+    //font-style: oblique;
+}
+h5 {
+    //font-size: small;
+    font-size: x-large;
+}
+h6 {
+    font-size: x-large;
+    //font-style: oblique;
+}
+
+// these force the footer to the bottom, even when the page isn't full
+.page-content {
+    flex: 1 0 auto;
+}
+
+.site-header {
+    flex: none;
+}
+
+.site-footer {
+    flex-shrink: 0;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-left: 10px solid black;
+} 
+
+header {
+    //padding-left: $global-title-indent;
+    // h1::before {
+    //     content: "";
+    //     display: inline;
+    //     border-bottom: 2px solid black;
+    //     position: absolute;
+    //     width: 100px;
+    //     top: 0;
+    //     left: 0;
+    //     padding: 18px 0 0 0;
+    // }
+    .header-pre-pre-wrapper {
+	//border: 1px solid black;
+	min-width: 100px;
+	display: table-cell;
+	//position: absolute;
+	//top: 0;
+	//padding-top: -20px;
+	left: 0;
+	position: relative;
+    }
+    .header-pre-pre {
+	position: absolute;
+	top: 49%;
+	left: 0;
+	border: 1px solid black;
+	width: 100%;
+    }
+    .header-pre-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+    }
+    // .header-pre::before {
+    // 	content: "\25BA";
+    // }
+    .header {
+	display: table-cell;
+	padding-left: 25px;
+    }
+}
