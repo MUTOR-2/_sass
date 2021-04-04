@@ -1,0 +1,44 @@
+.event {
+    .event-details {
+        .event-date {
+
+        }
+        
+        .event-presenter {
+
+        }
+
+        .event-host {
+
+        }
+
+        .event-abstract {
+            font-style: oblique;
+        }
+    }
+    .event-abstract {
+        font-style: oblique;
+    }
+    .event-bios {
+        border-top: 1px solid $global-delim-color;
+        margin-top: 20px;
+        padding-top: 10px;
+
+        .event-bio-photo-bio {
+            display: table;
+            table-layout: fixed;
+            
+            .event-bio-photo {
+                display: table-cell;
+                vertical-align: top;
+                padding-left: 20px;
+                
+            }
+            .event-bio-bio {
+                display: table-cell;
+                vertical-align: top;
+            }
+        }
+    }
+    
+}

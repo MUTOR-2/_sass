@@ -127,3 +127,15 @@ header {
 	padding-left: 25px;
     }
 }
+
+table {
+    //border-left: solid #000000 1px;
+    width: 100%;
+    th {
+        font-style: oblique;
+        text-align: left;
+    }
+    td {
+        padding: 0 24px 0 0;
+    }
+}
