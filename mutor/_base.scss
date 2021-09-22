@@ -40,7 +40,7 @@ a {
     }
 }
 
-h1.unit-title, h1.unit-synopsis {
+h1.unit-title, h1.unit-synopsis, h1.page-title {
     padding-top: 0;
     font-size: xx-large;
 }
@@ -90,6 +90,15 @@ h6 {
     border-bottom: 10px solid transparent;
 
     border-left: 10px solid black;
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right: 10px solid black;
 } 
 
 // header {
@@ -134,9 +143,37 @@ h6 {
 	      display: table-cell;
 	      vertical-align: middle;
     }
+
+    .lpre-pre-wrapper {
+	      min-width: 100px;
+	      display: table-cell;
+	      left: 0;
+	      position: relative;
+    }
+    .lpre-pre {
+	      position: absolute;
+	      top: 50%;
+	      left: 10px;
+	      border: 1px solid black;
+	      width: 100%;
+    }
+    .lpre-wrapper {
+	      display: table-cell;
+	      vertical-align: middle;
+    }
+    
     .title {
 	      display: table-cell;
 	      padding-left: 25px;
+        h1 {
+            font-size: xx-large;
+            font-style: oblique;
+        }
+    }
+
+    .mutor-home {
+	      display: table-cell;
+	      padding-left: 35px;
         h1 {
             font-size: xx-large;
             font-style: oblique;
